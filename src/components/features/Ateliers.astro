@@ -1,21 +1,13 @@
 ---
 import { Image } from 'astro:assets';
 import impactImage from '../assets/grandmother-playing.png';
-import masterclasses from '../assets/features/sdc-masterclasses-3.webp';
+import ateliers from '../../assets/features/scd-ateliers-4.webp';
 ---
 
-<section class="bg-white py-20">
-  <div class="container mx-auto px-4">
-    <div class="flex flex-col md:flex-row items-center gap-12">
-      <div class="md:w-1/2">
-        <Image 
-          src={masterclasses} 
-          alt="Grandmother and granddaughter laughing together while playing on the grass" 
-          class="rounded-lg shadow-xl w-full"
-          width={600}
-          height={400}
-        />
-      </div>
+<section class="bg-white py-0">
+  <div class="container mx-auto px-0">
+    <div class="flex flex-col md:flex-row items-center gap-2">
+
       <div class="md:w-1/2">
         <h2 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">
           Healthier behaviors at population-scale
@@ -23,6 +15,15 @@ import masterclasses from '../assets/features/sdc-masterclasses-3.webp';
         <p class="text-xl text-gray-700">
           Your Company gives hard-to-reach and complex populations a motivating and rewarding experience daily to improve health, cost, and quality outcomes. Our programs break through the noise, engaging members that traditional strategies have failed to reach.
         </p>
+      </div>
+      <div class="md:w-1/2">
+        <Image 
+          src={ateliers} 
+          alt="Grandmother and granddaughter laughing together while playing on the grass" 
+          class="rounded-lg shadow-xl w-full"
+          width={600}
+          height={400}
+        />
       </div>
     </div>
   </div>

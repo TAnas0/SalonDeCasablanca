@@ -1,20 +1,35 @@
 ---
 import { Image } from 'astro:assets';
 import heroImg from '../assets/hero-image.png';
+import sdcPattern from '../assets/sdc-pattern.svg';
 ---
 
-<section class="bg-white py-20">
-  <div class="container mx-auto px-4">
+<section class="relative bg-white bg-[url('/sdc-pattern.svg')] bg-no-repeat bg-cover bg-center h-screen">
+  <div class="absolute inset-0 bg-black/50 z-0"></div>
+  <div class="container mx-auto z-10 relative">
     <div class="flex flex-col lg:flex-row items-center">
-      <div class="lg:w-1/2 lg:pr-12">
-        <h1 class="text-5xl lg:text-6xl font-serif font-bold text-gray-900 mb-6">
-          The first daily care motivation platform
+      <div class="lg:w-1/2 lg:pr-12 py-10 h-full">
+        <h1 class="text-5xl lg:text-6xl font-serif font-bold text-gray-900 mb-6 text-gray-50">
+          Le Salon de Casablanca
+          <!-- 1er salon national des jeunes talents de l'art contemporain -->
+          <!-- 1ER SALON NATIONAL DES JEUNES TALENTS DE L’ART CONTEMPORAIN. -->
         </h1>
-        <p class="text-xl text-gray-700 mb-8">
-          Your Company uses behavioral science to help people create, establish, and maintain daily behaviors that improve their lives. Health plans see reduced utilization costs, substantial health outcomes, increased quality and Star Ratings.
+        <p class="text-xl text-gray-50 mb-8 text-right w-full">
+          Édition 2025, Du 1er au 30 Novembre 2025
         </p>
+        <p class="text-lg text-gray-50 mt-10">
+          Un rendez-vous culturel et artistique dédié à la création contemporaine sous toutes ses formes.
+        </p>
+        <p class="text-lg text-gray-50 mt-10">
+          L’édition 2025 réunit <span class="font-semibold text-xl">40 artistes</span> — plasticiens, photographes, designers et talents émergents — pour offrir un panorama vivant de la scène actuelle.
+        </p>
+        <p class="text-lg text-gray-50 mt-10">
+          Plus qu’une exposition, c’est un espace de rencontre et de partage, où ateliers, workshops et événements invitent le public à découvrir, expérimenter et dialoguer avec les œuvres.
+        </p>
+        <!-- Le Salon de Casablanca est un rendez-vous culturel et artistique qui met à l’honneur la création contemporaine sous toutes ses formes. L’édition 2025 réunit quarante artistes aux univers variés — plasticiens, photographes, designers et créateurs émergents — offrant un panorama vivant de la scène actuelle. Plus qu’une simple exposition, le Salon se veut un espace de rencontre, de réflexion et de partage, où ateliers, workshops et événements invitent le public à découvrir, expérimenter et dialoguer avec les œuvres. -->
+        <!-- Your Company uses behavioral science to help people create, establish, and maintain daily behaviors that improve their lives. Health plans see reduced utilization costs, substantial health outcomes, increased quality and Star Ratings. -->
       </div>
-      <div class="lg:w-1/2 mt-10 lg:mt-0 relative">
+      <div class="lg:w-1/2 mt-10 lg:mt-0 relative h-full">
         <Image 
           src={heroImg} 
           alt="Happy family" 
@@ -22,7 +37,7 @@ import heroImg from '../assets/hero-image.png';
           width={600}
           height={400}
         />
-        <button
+        <!-- <button
           id="playButton"
           class="absolute bottom-4 left-4 bg-white bg-opacity-80 text-gray-800 px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-opacity-100 transition duration-300"
         >
@@ -31,14 +46,28 @@ import heroImg from '../assets/hero-image.png';
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
           <span>See how this works</span>
-        </button>
+        </button> -->
+      </div>
+    </div>
+
+    <div class="flex justify-center text-white gap-4 w-full mt-2">
+      <div>
+        <a href="/platform" class="inline-block bg-white text-red-700/90 font-bold py-3 px-8 rounded-full hover:bg-blue-100 transition duration-300">
+          Explorez nos artistes exposants
+        </a>
+      </div>
+      <div>
+        <a href="/platform" class="inline-block bg-white text-red-700 font-bold py-3 px-8 rounded-full hover:bg-blue-100 transition duration-300 ">
+          Rejoignez-nous au Salon
+        </a>
+
       </div>
     </div>
   </div>
 </section>
 
 <!-- Video Modal -->
-<div id="videoModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+<!-- <div id="videoModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
   <div class="bg-white rounded-lg p-8 max-w-3xl w-full">
     <div class="flex justify-between items-center mb-4">
       <h3 class="text-2xl font-bold">How Your Co. Works</h3>
@@ -58,7 +87,7 @@ import heroImg from '../assets/hero-image.png';
       ></iframe>
     </div>
   </div>
-</div>
+</div> -->
 
 <script>
   // components/Hero.astro

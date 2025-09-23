@@ -1,12 +1,13 @@
 ---
 import { Image } from 'astro:assets';
-import logoImg from '../assets/logo.png';
+import logoImg from '../assets/logos/logo-black.svg';
 
 const navItems = [
-  { label: 'Solution', href: '#' },
-  { label: 'Who We Help', href: '#' },
-  { label: 'Outcomes', href: '#' },
-  { label: 'Company', href: '#' },
+  { label: 'Programme', href: '#' },
+  { label: 'Artistes', href: '#' },
+  { label: 'Press & Médias', href: '#' },
+  { label: 'Trouvez nous', href: '#' },
+  { label: 'Infos Pratiques', href: '#' },
   { label: 'Resources', href: '#' },
 ];
 ---
@@ -17,11 +18,10 @@ const navItems = [
       <Image 
         src={logoImg} 
         alt="Company Logo Image" 
-        class="rounded-lg"
-        width={48}
-        height={48}
+        class="rounded-xs"
+        width={150}
+        height={56}
       />
-      <span class="ml-2">Your Company</span>
     </a>
     <nav class="hidden md:flex space-x-6">
       {navItems.map(item => (

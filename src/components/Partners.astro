@@ -1,38 +1,38 @@
 ---
 import { Image } from 'astro:assets';
-import logo1 from '../assets/logos/1.png';
-import logo2 from '../assets/logos/2.png';
-import logo3 from '../assets/logos/3.png';
-import logo4 from '../assets/logos/4.png';
-import logo5 from '../assets/logos/5.png';
+import mLogo from '../assets/partners/2m.png';
+import almadaLogo from '../assets/partners/almada.png';
+import ministereJeunesseLogo from '../assets/partners/ministere-de-la-jeunesse.png';
+import weCasablancaLogo from '../assets/partners/wecasablanca.png';
 
 const partners = [
-  { name: "Fradel & Sons", logo: logo1 },
-  { name: "Wildwood Conservation", logo: logo2 },
-  { name: "Borcelle", logo: logo3 },
-  { name: "Maria Donna", logo: logo4 },
-  { name: "Ignite Bright", logo: logo5 },
-  { name: "Ignite Bright", logo: logo5 },
-  { name: "Borcelle", logo: logo3 },
-  { name: "Maria Donna", logo: logo4 },
-  { name: "Wildwood Conservation", logo: logo2 },
-  { name: "Fradel & Sons", logo: logo1 },
+  { name: "2M TV", logo: mLogo },
+  { name: "Al Mada", logo: almadaLogo },
+  { name: "Ministere de la Jeunesse", logo: ministereJeunesseLogo },
+  { name: "WeCasablanca", logo: weCasablancaLogo },
+  // { name: "Ignite Bright", logo: logo5 },
+  // { name: "Ignite Bright", logo: logo5 },
+  // { name: "Borcelle", logo: logo3 },
+  // { name: "Maria Donna", logo: logo4 },
+  // { name: "Wildwood Conservation", logo: logo2 },
+  // { name: "Fradel & Sons", logo: logo1 },
   // Add more partners here
 ];
 ---
 
 <section class="bg-white py-20">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-serif font-bold text-center mb-12">30 million daily check-ins</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+    <h2 class="text-3xl font-serif font-bold text-center mb-6">Nos Partenaires</h2>
+    <h3 class="text-lg font-serif text-center mb-12"> Nous sommes fiers de collaborer avec des marques et des créateurs inspirants. Ensemble, nous faisons vivre l’art et la culture à Casablanca.</h3>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
       {partners.map((partner) => (
         <div class="flex items-center justify-center">
           <Image 
             src={partner.logo} 
             alt="partner.name" 
             class="rounded-lg"
-            width={128}
-            height={128}
+            width={132}
+            height={132}
           />
         </div>
       ))}

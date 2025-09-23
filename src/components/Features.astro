@@ -1,5 +1,9 @@
 ---
 import { FaPills, FaClinicMedical, FaPager, FaCalendarAlt, FaClipboardCheck } from 'react-icons/fa';
+import CallOutWithImageLeft from '../components/CallOutWithImageLeft.astro';
+import Masterclasses from '../components/features/Masterclasses.astro';
+import Ateliers from '../components/features/Ateliers.astro';
+import Conferences from '../components/features/Conferences.astro';
 
 const features = [
   { icon: FaPills, title: 'Medication Adherence' },
@@ -11,10 +15,14 @@ const features = [
 
 ---
 
-<section class="bg-blue-700 py-20 text-white text-center">
+<section class="bg-gray-50 py-20 text-center">
   <div class="container mx-auto px-4">
-    <h2 class="text-4xl font-serif font-bold mb-4">Daily member engagement</h2>
-    <p class="text-xl mb-12 max-w-2xl mx-auto">
+    <h2 class="text-4xl font-serif font-bold mb-4">Le Salon de Casablanca, c'est...</h2>
+    <Masterclasses />
+    <Ateliers />
+    <Conferences />
+
+    <!-- <p class="text-xl mb-12 max-w-2xl mx-auto">
       Your Company reaches and motivates individuals struggling to adhere to care plans, rewarding them for healthy behaviors.
     </p>
 
@@ -31,9 +39,9 @@ const features = [
 
     <p class="text-xl mt-12 mb-8 max-w-2xl mx-auto">
       Our science-backed platform is built on the principles of behavioral economics to work for the hardest-to-reach populations.
-    </p>
+    </p> -->
 
-    <a href="/platform" class="inline-block bg-white text-blue-700 font-bold py-3 px-8 rounded-full hover:bg-blue-100 transition duration-300">
+    <a href="/platform" class="inline-block bg-white text-blue-700 font-bold mt-12 py-3 px-8 rounded-full hover:bg-blue-100 transition duration-300">
       Explore the Your Company platform
     </a>
   </div>
