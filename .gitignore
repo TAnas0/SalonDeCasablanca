@@ -25,3 +25,5 @@ pnpm-debug.log*
 
 # Parent directory stuff
 ../
+
+src/assets/exhibitions-original/

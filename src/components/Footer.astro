@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import logoImg from '../assets/logo.png';
+import logoImg from '../assets/logos/logo-white.svg';
 
 const footerLinks = [
   { label: 'Home', href: '#' },
@@ -21,12 +21,12 @@ const footerLinks = [
         <Image 
           src={logoImg} 
           alt="Company Logo Image" 
-          class="rounded-lg"
-          width={48}
-          height={48}
+          class="rounded-xs"
+          width={182}
+          height={126}
         />
-        <p class="font-serif font-bold pt-2 text-xl">Your Company</p>
-        <p class="text-sm pt-2">Better outcomes with behavioral economics.</p>
+        <p class="font-serif font-bold pt-2 text-xl">Salon de Casablanca</p>
+        <p class="text-sm pt-2"></p>
       </div>
       <div>
         <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
@@ -50,7 +50,7 @@ const footerLinks = [
       </div>
     </div>
     <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
-      <p class="text-sm mb-4 md:mb-0">&copy; 2024 Your Company Inc. All rights reserved.</p>
+      <p class="text-sm mb-4 md:mb-0">&copy; 2025 Salon de Casablanca</p>
       <div class="flex space-x-4">
         <a href="https://www.linkedin.com/company/yourcompany" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white">
           <span class="sr-only">LinkedIn</span>

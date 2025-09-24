@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import artistSample from '../assets/sample-artist.jpg';
+import featured from '../assets/exhibitions/anissa-hafidi/featured.webp';
+import casablanca from '../assets/exhibitions/anissa-hafidi/casablanca.jpg';
+
+
+let artists = [
+  {
+    name: "Amina El Fassi",
+    medium: "Painting",
+    image: "https://avatar.iran.liara.run/public/17",
+  },
+  {
+    name: "Karim Benali",
+    medium: "Sculpture",
+    image: "https://avatar.iran.liara.run/public/37",
+  },
+  {
+    name: "Leila Haddad",
+    medium: "Photography",
+    image: "https://avatar.iran.liara.run/public/2",
+  },
+  {
+    name: "Samir Ouazzani",
+    medium: "Mixed Media",
+    image: "https://avatar.iran.liara.run/public/7",
+  },
+  // … add up to 40–60 entries
+];
+artists = Array(5).fill(artists).flat();
+---
+
+<Layout title="Le Salon de Casablanca - Édition 2025">
+  <section class="mx-auto px-4 py-12">
+    <h2 class="mb-8 text-center text-3xl font-bold text-gray-900">
+      Artists
+    </h2>
+
+    <div class="grid gap-1 md:grid-cols-2">
+      {artists.map((artist) => (
+        <div class="relative min-h-96 border">
+          <div class="absolute">
+            <img src={featured.src} alt="Artwork by Artist Name" loading="lazy" class="w-full h-full object-cover object-center" />
+          </div>
+          <div class="absolute bottom-4 left-4 text-gray-50 p-2 bg-gray-700/75 rounded-md z-20">
+            <h3 class="text-3xl font-semibold mb-1">Artist Name</h3>
+            <p class="text-md">Specialty</p>
+          </div>
+          <div class="absolute w-full h-full opacity-0 hover:opacity-100 z-10 transition-opacity duration-1000">
+            <img src={casablanca.src} alt="" class="w-full h-full object-cover object-center"/>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>

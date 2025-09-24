@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import artistSample from '../assets/sample-artist.jpg';
+
+
+let artists = [
+  {
+    name: "Amina El Fassi",
+    medium: "Painting",
+    image: "https://avatar.iran.liara.run/public/17",
+  },
+  {
+    name: "Karim Benali",
+    medium: "Sculpture",
+    image: "https://avatar.iran.liara.run/public/37",
+  },
+  {
+    name: "Leila Haddad",
+    medium: "Photography",
+    image: "https://avatar.iran.liara.run/public/2",
+  },
+  {
+    name: "Samir Ouazzani",
+    medium: "Mixed Media",
+    image: "https://avatar.iran.liara.run/public/7",
+  },
+  // … add up to 40–60 entries
+];
+artists = Array(5).fill(artists).flat();
+---
+
+<Layout title="Le Salon de Casablanca - Édition 2025">
+  <section class="mx-auto max-w-7xl px-4 py-12">
+    <h2 class="mb-8 text-center text-3xl font-bold text-gray-900">
+      Artists
+    </h2>
+
+    <div class="grid gap-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      {artists.map((artist) => (
+        <div class="group relative overflow-visible">
+
+        <div class="relative overflow-hidden overflow-hidden rounded-md border bg-white shadow-xl transition hover:shadow-lg hover:underline cursor-pointer duration-300 group-hover:z-20 group-hover:scale-105">
+          <img
+            src={artist.image}
+            alt={artist.name}
+            class="w-full object-cover"
+          />
+          <div class="p-4 transition duration-500 group-hover:scale-105">
+            <h3 class="text-lg font-semibold text-gray-900">{artist.name}</h3>
+            <p class="text-sm text-gray-600">{artist.medium}</p>
+          </div>
+        </div>
+      </div>
+      ))}
+    </div>
+  </section>
+</Layout>
