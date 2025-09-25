@@ -1,21 +1,25 @@
 ---
 import { Image } from 'astro:assets';
 import heroImg from '../assets/watching-art.jpg';
+import laPlateforme55Logo from '../assets/logos/laplateforme55.jpg';
+import BASMALogo from '../assets/logos/BASMA-logo.jpg';
 import sdcPattern from '../assets/sdc-pattern.svg';
+import { FaMapMarkerAlt, FaMapMarkedAlt, FaPalette, } from 'react-icons/fa';
+
 ---
 
-<section class="relative bg-white bg-[url('/sdc-pattern.svg')] bg-no-repeat bg-cover bg-center h-screen">
+<section class="relative bg-white bg-[url('/sdc-pattern.svg')] bg-no-repeat bg-cover bg-center">
   <div class="absolute inset-0 bg-black/50 z-0"></div>
   <div class="container mx-auto z-10 relative">
     <div class="flex flex-col lg:flex-row items-center">
       <div class="lg:w-1/2 lg:pr-12 py-10 h-full">
-        <h1 class="text-5xl lg:text-6xl font-serif font-bold mb-6 text-gray-50">
+        <h1 class="text-5xl lg:text-6xl font-serif font-bold text-gray-50 underline">
           Le Salon de Casablanca
           <!-- 1er salon national des jeunes talents de l'art contemporain -->
           <!-- 1ER SALON NATIONAL DES JEUNES TALENTS DE L’ART CONTEMPORAIN. -->
         </h1>
         <p class="text-xl text-gray-50 mb-8 text-right w-full">
-          Édition 2025, Du 1er au 30 Novembre 2025
+          Édition 2025, du 1er au 30 Novembre 2025
         </p>
         <p class="text-lg text-gray-50 mt-10">
           Un rendez-vous culturel et artistique dédié à la création contemporaine sous toutes ses formes.
@@ -24,7 +28,7 @@ import sdcPattern from '../assets/sdc-pattern.svg';
           L’édition 2025 réunit <span class="font-semibold text-xl">40 artistes</span> — plasticiens, photographes, designers et talents émergents — pour offrir un panorama vivant de la scène actuelle.
         </p>
         <p class="text-lg text-gray-50 mt-10">
-          Plus qu’une exposition, c’est un espace de rencontre et de partage, où ateliers, workshops et événements invitent le public à découvrir, expérimenter et dialoguer avec les œuvres.
+          Plus qu’une exposition, c’est un espace de rencontre et de partage, où <span class="font-semibold">ateliers, workshops et événements</span> invitent le public à découvrir, expérimenter et dialoguer avec les œuvres.
         </p>
         <!-- Le Salon de Casablanca est un rendez-vous culturel et artistique qui met à l’honneur la création contemporaine sous toutes ses formes. L’édition 2025 réunit quarante artistes aux univers variés — plasticiens, photographes, designers et créateurs émergents — offrant un panorama vivant de la scène actuelle. Plus qu’une simple exposition, le Salon se veut un espace de rencontre, de réflexion et de partage, où ateliers, workshops et événements invitent le public à découvrir, expérimenter et dialoguer avec les œuvres. -->
         <!-- Your Company uses behavioral science to help people create, establish, and maintain daily behaviors that improve their lives. Health plans see reduced utilization costs, substantial health outcomes, increased quality and Star Ratings. -->
@@ -51,16 +55,33 @@ import sdcPattern from '../assets/sdc-pattern.svg';
     </div>
 
     <div class="flex justify-center text-white gap-4 w-full mt-2">
+      <div class="">
+        <a href="/gallery" class="flex gap-2 justify-center items-center bg-white text-red-700/90 font-bold py-3 px-8 rounded-full hover:bg-blue-100 transition duration-300">
+          Explorez nos artistes & expositions
+          <FaPalette className="w-5 h-5" />
+        </a>
+      </div>
+      <div class="">
+        <a href="#rejoignez-nous" class="flex gap-2 justify-center items-center bg-white text-gray-900 font-bold py-3 px-8 rounded-full hover:bg-blue-100 transition duration-300 ">
+          Rejoignez-nous au Salon
+          <FaMapMarkerAlt className="w-5 h-5" />
+        </a>
+      </div>
+    </div>
+
+    <div class="flex w-full gap-6 justify-center items-center mt-12 pb-6">
+      <div class="text-gray-50 text-lg font-semibold">
+        Présenté par:
+      </div>
       <div>
-        <a href="/platform" class="inline-block bg-white text-red-700/90 font-bold py-3 px-8 rounded-full hover:bg-blue-100 transition duration-300">
-          Explorez nos artistes exposants
+        <a href="https://laplateforme55.org" target="_blank" rel="noopener noreferrer">
+          <img src={laPlateforme55Logo.src} alt="" class="hover:scale-110 transform transition-transform duration-500 cursor-pointer">
         </a>
       </div>
       <div>
-        <a href="/platform" class="inline-block bg-white text-red-700 font-bold py-3 px-8 rounded-full hover:bg-blue-100 transition duration-300 ">
-          Rejoignez-nous au Salon
+        <a href="https://linktr.ee/basm.asso" target="_blank" rel="noopener noreferrer">
+          <img src={BASMALogo.src} alt="" class="rounded-full hover:scale-110 transform transition-transform duration-500 cursor-pointer">
         </a>
-
       </div>
     </div>
   </div>

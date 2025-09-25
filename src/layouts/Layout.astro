@@ -18,6 +18,7 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title} | Your Company</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script> -->
   </head>
   <body class="font-inter">
     <Header />
@@ -27,3 +28,58 @@ const { title } = Astro.props;
     <Footer />
   </body>
 </html>
+
+<script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.set(".fade-in-slide-from-left, .fade-in-slide-from-right", { opacity: 0 });
+// Left slide-in batch
+ScrollTrigger.batch(".fade-in-slide-from-left", {
+  interval: 0.1,
+  batchMax: 8,
+  start: "top 80%",
+  once: true,
+  onEnter: batch => gsap.fromTo(batch,
+    { opacity: 0, y: 40, rotationY: 90, transformOrigin: "center right" }, 
+    { opacity: 1, y: 0, rotationY: 0, duration: 5, stagger: 0.08, ease: "power3.out" }
+  ),
+  // onEnter: batch => gsap.from(batch, {
+  //   opacity: 0,
+  //   y: 40,
+  //   rotationY: 90,
+  //   transformOrigin: "center right",
+  //   // stagger: 0.08,
+  //   duration: 5,
+  //   ease: "power3.out"
+  // }),
+  // markers: true
+});
+
+// Right slide-in batch
+ScrollTrigger.batch(".fade-in-slide-from-right", {
+  interval: 0.1,
+  batchMax: 8,
+  start: "top 80%",
+  once: true,
+  onEnter: batch => gsap.fromTo(batch,
+    { opacity: 0, y: 40, rotationY: 90, transformOrigin: "center left" }, 
+    { opacity: 1, y: 0, rotationY: 0, duration: 5, stagger: 0.08, ease: "power3.out" }
+  ),
+  // onEnter: batch => gsap.from(batch, {
+  //   opacity: 0,
+  //   y: 40,
+  //   rotationY: 90,
+  //   transformOrigin: "center left",
+  //   // stagger: 0.08,
+  //   duration: 5,
+  //   ease: "power3.out"
+  // }),
+  // markers: true
+});
+
+  // gsap.from('.animate-me', { opacity: 0, rotationY: 90, duration: 1, transformOrigin: "right center" });
+  // gsap.from('.animate-me', { opacity: 0, rotationY: 90, duration: 1, transformOrigin: "left center" });
+</script>

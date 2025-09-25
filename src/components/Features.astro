@@ -4,6 +4,7 @@ import CallOutWithImageLeft from '../components/CallOutWithImageLeft.astro';
 import Masterclasses from '../components/features/Masterclasses.astro';
 import Ateliers from '../components/features/Ateliers.astro';
 import Conferences from '../components/features/Conferences.astro';
+import { FaArrowRight } from 'react-icons/fa';
 
 const features = [
   { icon: FaPills, title: 'Medication Adherence' },
@@ -17,7 +18,17 @@ const features = [
 
 <section class="bg-gray-50 py-20 text-center">
   <div class="container mx-auto px-4">
-    <h2 class="text-4xl font-serif font-bold mb-4">Le Salon de Casablanca, c'est...</h2>
+    <div class="flex align-center justify-between mb-6">
+      <h2 class="text-4xl font-serif font-bold mb-4">Le Salon de Casablanca, c'est...</h2>
+      <a href="/platform" target="_blank" rel="noopener noreferrer" class="inline-block bg-white text-red-700/90 font-bold py-3 px-8 rounded-full hover:bg-red-100 transition duration-300 border border-gray-100 shadow-lg">
+        <div class="flex gap-2 justify-center items-center">
+          <div>
+            Explorez notre programme
+          </div>
+          <FaArrowRight className="w-5 h-5" />
+        </div>
+      </a>
+    </div>
     <Masterclasses />
     <Ateliers />
     <Conferences />
@@ -41,8 +52,6 @@ const features = [
       Our science-backed platform is built on the principles of behavioral economics to work for the hardest-to-reach populations.
     </p> -->
 
-    <a href="/platform" class="inline-block bg-white text-red-700/90 font-bold mt-12 py-3 px-8 rounded-full hover:bg-blue-100 transition duration-300">
-      Explorez notre programme
-    </a>
+
   </div>
 </section>

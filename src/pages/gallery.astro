@@ -4,6 +4,10 @@ import artistSample from '../assets/sample-artist.jpg';
 import featured from '../assets/exhibitions/anissa-hafidi/featured.webp';
 import casablanca from '../assets/exhibitions/anissa-hafidi/casablanca.jpg';
 
+import featured2 from '../assets/exhibitions/lina-el-youssfi/featured.webp';
+import entwinedDichotomy from '../assets/exhibitions/lina-el-youssfi/entwined-dichotomy.webp';
+import profile1 from '../assets/exhibitions/lina-el-youssfi/profile.webp';
+
 
 let artists = [
   {
@@ -33,25 +37,121 @@ artists = Array(5).fill(artists).flat();
 
 <Layout title="Le Salon de Casablanca - Édition 2025">
   <section class="mx-auto px-4 py-12">
-    <h2 class="mb-8 text-center text-3xl font-bold text-gray-900">
-      Artists
-    </h2>
+    <div class="flex justify-between mb-8 border-b-2 border-black">
+      <h2 class="text-left text-3xl font-bold text-gray-900">
+        Gallerie des expositions
+      </h2>
+      <div class="flex gap-4">
+        <div>Search</div>
+        <div>Shuffle</div>
+      </div>
+    </div>
 
     <div class="grid gap-1 md:grid-cols-2">
-      {artists.map((artist) => (
-        <div class="relative min-h-96 border">
-          <div class="absolute">
-            <img src={featured.src} alt="Artwork by Artist Name" loading="lazy" class="w-full h-full object-cover object-center" />
-          </div>
-          <div class="absolute bottom-4 left-4 text-gray-50 p-2 bg-gray-700/75 rounded-md z-20">
-            <h3 class="text-3xl font-semibold mb-1">Artist Name</h3>
-            <p class="text-md">Specialty</p>
-          </div>
-          <div class="absolute w-full h-full opacity-0 hover:opacity-100 z-10 transition-opacity duration-1000">
-            <img src={casablanca.src} alt="" class="w-full h-full object-cover object-center"/>
-          </div>
+      <div class="relative min-h-96 cursor-pointer border overflow-hidden fade-in-slide-from-left">
+        <div class="absolute">
+          <img src={featured.src} alt="Artwork by Artist Name" loading="lazy" class="w-full h-full object-cover object-center" />
         </div>
-      ))}
+        <div class="absolute bottom-4 left-4 text-gray-50 p-2 bg-gray-700/75 rounded-md z-20">
+          <h3 class="text-3xl font-semibold mb-1">Anissa Hafidi</h3>
+          <p class="text-md">Specialty</p>
+        </div>
+        <div class="absolute w-full h-full opacity-0 hover:opacity-100 z-10 transition-opacity duration-1000">
+          <img src={casablanca.src} alt="" class="w-full h-full object-cover object-center"/>
+        </div>
+        <div class="absolute w-[1/4] h-full opacity-0 hover:opacity-100 z-10 transition-opacity duration-2000">
+          <img src={profile1.src} alt="" class="w-full h-full object-cover object-center"/>
+        </div>
+      </div>
+
+      <div class="group relative min-h-96 cursor-pointer border overflow-hidden fade-in-slide-from-right">
+        <div class="absolute w-full h-full">
+          <img src={featured2.src} alt="Artwork by Artist Name" loading="lazy" class="w-full h-full object-cover object-center" />
+        </div>
+        <div class="absolute bottom-4 left-4 text-gray-50 p-2 bg-gray-700/75 rounded-md z-50">
+          <h3 class="text-3xl font-semibold mb-1">Lina El Youssfi</h3>
+          <p class="text-md">Specialty</p>
+        </div>
+        <img src={entwinedDichotomy.src} alt="" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-10" />
+        <img src={profile1.src} alt="" class="rounded-md absolute top-0 left-0 w-1/3 h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-20" />
+      </div>
+      <div class="group relative min-h-96 cursor-pointer border overflow-hidden fade-in-slide-from-left">
+        <div class="absolute w-full h-full">
+          <img src={featured2.src} alt="Artwork by Artist Name" loading="lazy" class="w-full h-full object-cover object-center" />
+        </div>
+        <div class="absolute bottom-4 right-4 text-gray-50 p-2 bg-gray-700/75 rounded-md z-50">
+          <h3 class="text-3xl font-semibold mb-1">Lina El Youssfi</h3>
+          <p class="text-md">Specialty</p>
+        </div>
+        <img src={entwinedDichotomy.src} alt="" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-10" />
+        <img src={profile1.src} alt="" class="rounded-md absolute top-0 right-0 w-1/3 h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-20" />
+      </div>
+      <div class="group relative min-h-96 cursor-pointer border overflow-hidden fade-in-slide-from-right">
+        <div class="absolute w-full h-full">
+          <img src={featured2.src} alt="Artwork by Artist Name" loading="lazy" class="w-full h-full object-cover object-center" />
+        </div>
+        <div class="absolute bottom-4 left-4 text-gray-50 p-2 bg-gray-700/75 rounded-md z-50">
+          <h3 class="text-3xl font-semibold mb-1">Lina El Youssfi</h3>
+          <p class="text-md">Specialty</p>
+        </div>
+        <img src={entwinedDichotomy.src} alt="" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-10" />
+        <img src={profile1.src} alt="" class="rounded-md absolute top-0 left-0 w-1/3 h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-20" />
+      </div>
+      <div class="group relative min-h-96 cursor-pointer border overflow-hidden fade-in-slide-from-left">
+        <div class="absolute w-full h-full">
+          <img src={featured2.src} alt="Artwork by Artist Name" loading="lazy" class="w-full h-full object-cover object-center" />
+        </div>
+        <div class="absolute bottom-4 right-4 text-gray-50 p-2 bg-gray-700/75 rounded-md z-50">
+          <h3 class="text-3xl font-semibold mb-1">Lina El Youssfi</h3>
+          <p class="text-md">Specialty</p>
+        </div>
+        <img src={entwinedDichotomy.src} alt="" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-10" />
+        <img src={profile1.src} alt="" class="rounded-md absolute top-0 right-0 w-1/3 h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-20" />
+      </div>
+      <div class="group relative min-h-96 cursor-pointer border overflow-hidden fade-in-slide-from-right">
+        <div class="absolute w-full h-full">
+          <img src={featured2.src} alt="Artwork by Artist Name" loading="lazy" class="w-full h-full object-cover object-center" />
+        </div>
+        <div class="absolute bottom-4 left-4 text-gray-50 p-2 bg-gray-700/75 rounded-md z-50">
+          <h3 class="text-3xl font-semibold mb-1">Lina El Youssfi</h3>
+          <p class="text-md">Specialty</p>
+        </div>
+        <img src={entwinedDichotomy.src} alt="" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-10" />
+        <img src={profile1.src} alt="" class="rounded-md absolute top-0 left-0 w-1/3 h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-20" />
+      </div>
+      <div class="group relative min-h-96 cursor-pointer border overflow-hidden fade-in-slide-from-left">
+        <div class="absolute w-full h-full">
+          <img src={featured2.src} alt="Artwork by Artist Name" loading="lazy" class="w-full h-full object-cover object-center" />
+        </div>
+        <div class="absolute bottom-4 right-4 text-gray-50 p-2 bg-gray-700/75 rounded-md z-50">
+          <h3 class="text-3xl font-semibold mb-1">Lina El Youssfi</h3>
+          <p class="text-md">Specialty</p>
+        </div>
+        <img src={entwinedDichotomy.src} alt="" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-10" />
+        <img src={profile1.src} alt="" class="rounded-md absolute top-0 right-0 w-1/3 h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-20" />
+      </div>
+      <div class="group relative min-h-96 cursor-pointer border overflow-hidden fade-in-slide-from-right">
+        <div class="absolute w-full h-full">
+          <img src={featured2.src} alt="Artwork by Artist Name" loading="lazy" class="w-full h-full object-cover object-center" />
+        </div>
+        <div class="absolute bottom-4 left-4 text-gray-50 p-2 bg-gray-700/75 rounded-md z-50">
+          <h3 class="text-3xl font-semibold mb-1">Lina El Youssfi</h3>
+          <p class="text-md">Specialty</p>
+        </div>
+        <img src={entwinedDichotomy.src} alt="" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-10" />
+        <img src={profile1.src} alt="" class="rounded-md absolute top-0 left-0 w-1/3 h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-20" />
+      </div>
+      <div class="group relative min-h-96 cursor-pointer border overflow-hidden fade-in-slide-from-left">
+        <div class="absolute w-full h-full">
+          <img src={featured2.src} alt="Artwork by Artist Name" loading="lazy" class="w-full h-full object-cover object-center" />
+        </div>
+        <div class="absolute bottom-4 right-4 text-gray-50 p-2 bg-gray-700/75 rounded-md z-50">
+          <h3 class="text-3xl font-semibold mb-1">Lina El Youssfi</h3>
+          <p class="text-md">Specialty</p>
+        </div>
+        <img src={entwinedDichotomy.src} alt="" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-10" />
+        <img src={profile1.src} alt="" class="rounded-md absolute top-0 right-0 w-1/3 h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-20" />
+      </div>
     </div>
   </section>
 </Layout>

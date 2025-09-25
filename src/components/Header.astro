@@ -3,12 +3,13 @@ import { Image } from 'astro:assets';
 import logoImg from '../assets/logos/logo-black.svg';
 
 const navItems = [
-  { label: 'Programme', href: '#' },
-  { label: 'Artistes', href: '#' },
-  { label: 'Press & Médias', href: '#' },
-  { label: 'Trouvez nous', href: '#' },
-  { label: 'Infos Pratiques', href: '#' },
-  { label: 'Resources', href: '#' },
+  { label: 'Accueil', href: '/' },
+  { label: 'Programme', href: '/programme' },
+  { label: 'Artistes & Expositions', href: '/gallery' },
+  // { label: 'Press & Médias', href: '#' },
+  { label: 'Rejoignez nous', href: '/#rejoignez-nous' },
+  // { label: 'Infos Pratiques', href: '#' },
+  // { label: 'Resources', href: '#' },
 ];
 ---
 
@@ -25,7 +26,7 @@ const navItems = [
     </a>
     <nav class="hidden md:flex space-x-6">
       {navItems.map(item => (
-        <a href={item.href} class="text-gray-700 hover:text-primary-500 transition duration-150 ease-in-out">
+        <a href={item.href} class="text-gray-900 hover:text-primary-500 transition duration-150 ease-in-out">
           {item.label}
         </a>
       ))}
