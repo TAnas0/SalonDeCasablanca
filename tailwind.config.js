@@ -12,8 +12,8 @@ export const theme = {
       },
     },
     fontFamily: {
-      sans: ['Inter', ..._fontFamily.sans],
-      serif: ['Merriweather', ..._fontFamily.serif],
+      sans: ['"Playfair Display"', ..._fontFamily.sans],
+      serif: ['Inter', ..._fontFamily.serif],
     },
   },
 }
