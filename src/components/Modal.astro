@@ -14,7 +14,7 @@ const { artist } = Astro.props;
     <h2 class="text-2xl font-bold text-gray-50 underline">{artist.name}</h2>
     
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      {artist.images.map((img, i) => (
+      {artist.images.map((img: any, i: any) => (
         <img
           src={img.src}
           alt={`Artwork ${i+1} by ${artist.name}`}
