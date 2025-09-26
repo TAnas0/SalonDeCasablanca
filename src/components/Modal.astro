@@ -1,0 +1,33 @@
+---
+const { artist } = Astro.props;
+---
+<dialog id={`modal-${artist.id}`} class="p-4 w-full h-full bg-black/80 backdrop-blur-sm rounded-md">
+  <!-- Close icon top-right -->
+  <button 
+    onclick={`document.getElementById('modal-${artist.id}').close()`} 
+    class="absolute top-2 right-2 text-gray-50 hover:text-red-500 text-3xl font-bold"
+  >
+    &times;
+  </button>
+
+  <div class="flex flex-col items-center mt-8 space-y-6">
+    <h2 class="text-2xl font-bold text-gray-50 underline">{artist.name}</h2>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {artist.images.map((img, i) => (
+        <img
+          src={img.src}
+          alt={`Artwork ${i+1} by ${artist.name}`}
+          class={`rounded-lg border border-gray-500 object-cover ${i === 0 ? 'col-span-2 row-span-2' : ''}`}
+        />
+      ))}
+    </div>
+  </div>
+</dialog>
+
+<button
+  onclick={`document.getElementById('modal-${artist.id}').showModal()`} 
+  class="mt-2 px-4 py-2 bg-blue-600 text-white rounded"
+>
+  Open {artist.name}
+</button>

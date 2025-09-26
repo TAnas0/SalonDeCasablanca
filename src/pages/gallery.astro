@@ -1,36 +1,114 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import artistSample from '../assets/sample-artist.jpg';
+
 import featured from '../assets/exhibitions/anissa-hafidi/featured.webp';
+import profile from '../assets/exhibitions/anissa-hafidi/profile.jpg';
 import casablanca from '../assets/exhibitions/anissa-hafidi/casablanca.jpg';
+import theEnd from '../assets/exhibitions/anissa-hafidi/the-end.webp';
 
 import featured2 from '../assets/exhibitions/lina-el-youssfi/featured.webp';
-import entwinedDichotomy from '../assets/exhibitions/lina-el-youssfi/entwined-dichotomy.webp';
 import profile1 from '../assets/exhibitions/lina-el-youssfi/profile.webp';
+import entwinedDichotomy from '../assets/exhibitions/lina-el-youssfi/entwined-dichotomy.webp';
 
+import profileKenzaHamoumi from '../assets/exhibitions/kenza-hamoumi/Kenza-HAMOUMI.jpg'
+import featuredKenzaHamoumi from '../assets/exhibitions/kenza-hamoumi/featured.jpg'
+import entreTerreEtCielKenzaHamoumi from '../assets/exhibitions/kenza-hamoumi/Entre-terre-et-ciel.jpg'
+import entreTerreEtCiel2KenzaHamoumi from '../assets/exhibitions/kenza-hamoumi/Entre-terre-et-ciel-2.png'
+
+
+import profileMohamedAmineSerhane from '../assets/exhibitions/mohamed-amine-serhane/profile.jpg'
+import artMohamedAmineSerhane1 from '../assets/exhibitions/mohamed-amine-serhane/Image140-scaled.jpg'
+import artMohamedAmineSerhane2 from '../assets/exhibitions/mohamed-amine-serhane/Image153-scaled.jpg'
+import artMohamedAmineSerhane3 from '../assets/exhibitions/mohamed-amine-serhane/Image154-scaled.jpg'
+import artMohamedAmineSerhane4 from '../assets/exhibitions/mohamed-amine-serhane/Image155-scaled.jpg'
+import artMohamedAmineSerhane5 from '../assets/exhibitions/mohamed-amine-serhane/Image156-scaled.jpg'
+import artMohamedAmineSerhane6 from '../assets/exhibitions/mohamed-amine-serhane/Image157-scaled.jpg'
+import artMohamedAmineSerhane7 from '../assets/exhibitions/mohamed-amine-serhane/Image158-scaled.jpg'
+
+// import MicroModal from "micromodal";
+import ArtModal from '../components/Modal.astro';
 
 let artists = [
   {
-    name: "Amina El Fassi",
+    id: 1,
+    name: "Anissa Hafidi",
     medium: "Painting",
-    image: "https://avatar.iran.liara.run/public/17",
+    // image: "https://avatar.iran.liara.run/public/17",
+    profile: profile,
+    featured: featured,
+    images: [
+      casablanca,
+      theEnd
+    ],
   },
   {
-    name: "Karim Benali",
+    id: 2,
+    name: "Lina El Youssfi",
     medium: "Sculpture",
-    image: "https://avatar.iran.liara.run/public/37",
+    profile: profile1,
+    featured: featured2,
+    images: [
+      entwinedDichotomy
+    ],
   },
   {
-    name: "Leila Haddad",
+    id: 3,
+    name: "Kenza Hamoumi",
     medium: "Photography",
-    image: "https://avatar.iran.liara.run/public/2",
+    profile: profileKenzaHamoumi,
+    featured: featuredKenzaHamoumi,
+    images: [
+      entreTerreEtCielKenzaHamoumi,
+      entreTerreEtCiel2KenzaHamoumi
+    ],
   },
   {
-    name: "Samir Ouazzani",
+    id: 4,
+    name: "Mohamed Amine Serhane",
     medium: "Mixed Media",
-    image: "https://avatar.iran.liara.run/public/7",
+    profile: profileMohamedAmineSerhane,
+    featured: featured2,
+    images: [
+      artMohamedAmineSerhane1,
+      artMohamedAmineSerhane2,
+      artMohamedAmineSerhane3,
+      artMohamedAmineSerhane4,
+      artMohamedAmineSerhane5,
+      artMohamedAmineSerhane6,
+      artMohamedAmineSerhane7,
+    ],
   },
-  // … add up to 40–60 entries
+  {
+    id: 5,
+    name: "Rachid Ismek",
+    medium: "Mixed Media",
+    profile: profile1,
+    featured: featured2,
+    images: [
+      entwinedDichotomy
+    ],
+  },
+  {
+    id: 6,
+    name: "Soufiane Mezraoui",
+    medium: "Mixed Media",
+    profile: profile1,
+    featured: featured2,
+    images: [
+      entwinedDichotomy
+    ],
+  },
+  {
+    id: 7,
+    name: "Mohamed Ahnach",
+    medium: "Photography",
+    profile: profile1,
+    featured: featured2,
+    images: [
+      entwinedDichotomy
+    ],
+  },
 ];
 artists = Array(5).fill(artists).flat();
 ---
@@ -45,6 +123,42 @@ artists = Array(5).fill(artists).flat();
         <div>Search</div>
         <div>Shuffle</div>
       </div>
+    </div>
+
+    <div class="grid gap-1 md:grid-cols-2">
+      {artists.map((artist, idx) => (
+        <div
+          class={`group relative min-h-96 cursor-pointer border overflow-hidden fade-in-slide-from-${idx % 2 === 0 ? 'left' : 'right'}`}
+        >
+          <div class="absolute w-full h-full">
+            <img
+              src={artist.featured.src}
+              alt={`Artwork by ${artist.name}`}
+              loading="lazy"
+              class="w-full h-full object-cover object-center"
+            />
+          </div>
+    
+          <div class="absolute bottom-4 left-4 text-gray-50 p-2 bg-gray-700/75 rounded-md z-50">
+            <h3 class="text-3xl font-semibold mb-1">{artist.name}</h3>
+            <p class="text-md">{artist.medium}</p>
+          </div>
+    
+          {artist.images.map((img, i) => (
+            <img
+              src={img.src}
+              alt=""
+              class={`absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-${1000 + i * 500} z-10`}
+            />
+          ))}
+    
+          <img
+            src={artist.profile.src}
+            alt={`${artist.name} profile`}
+            class="rounded-md absolute top-0 left-0 w-1/3 h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-20"
+          />
+        </div>
+      ))}
     </div>
 
     <div class="grid gap-1 md:grid-cols-2">
@@ -153,5 +267,15 @@ artists = Array(5).fill(artists).flat();
         <img src={profile1.src} alt="" class="rounded-md absolute top-0 right-0 w-1/3 h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-20" />
       </div>
     </div>
+
+    <!-- <button data-micromodal-trigger="modal-1">Open</button> -->
+
+    <ArtModal artist={artists[0]}/>
+    <ArtModal artist={artists[1]}/>
+    <ArtModal artist={artists[2]}/>
+    <ArtModal artist={artists[3]}/>
+    <ArtModal artist={artists[4]}/>
+    <ArtModal artist={artists[5]}/>
+    <ArtModal artist={artists[6]}/>
   </section>
 </Layout>

@@ -1,0 +1,30 @@
+---
+import MicroModal from "micromodal";
+import Layout from '../layouts/Layout.astro';
+---
+<Layout>
+
+<section>
+  <button data-micromodal-trigger="modal-1">Open Modal</button>
+
+  <div id="modal-1" aria-hidden="true" class="micromodal-slide" class="hidden">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
+    <div class="modal__container">
+      <header>
+        <h2>Modal Title</h2>
+        <button data-micromodal-close>Close</button>
+      </header>
+      <main>
+        <p>Content goes here.</p>
+      </main>
+    </div>
+  </div>
+</section>
+</Layout>
+
+<script is:client>
+  import MicroModal from "micromodal";
+  MicroModal.init();
+  console.log("modal-1")
+  MicroModal.show('modal-1')
+</script>
