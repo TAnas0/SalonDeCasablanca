@@ -11,10 +11,10 @@
       "Aujourd'hui, elle poursuit son exploration avec de nouveaux supports et collaborations interdisciplinaires, convaincue que l'art reste un espace de dialogue essentiel, capable de relier les expériences individuelles et collectives."
     ],
     "medium": "Painting",
-    "profile": "/exhibitions/anissa-hafidi/profile.jpg",
+    "profile": "/exhibitions/anissa-hafidi/profile.webp",
     "featured": "/exhibitions/anissa-hafidi/featured.webp",
     "images": [
-      "/exhibitions/anissa-hafidi/casablanca.jpg",
+      "/exhibitions/anissa-hafidi/casablanca.webp",
       "/exhibitions/anissa-hafidi/the-end.webp"
     ]
   },
@@ -25,8 +25,8 @@
     "bio": [],
     "medium": "Sculpture",
     "profile": "/exhibitions/lina-el-youssfi/profile.webp",
-    "featured": "featured2",
-    "images": ["/exhibitions/lina-el-youssfi/entwinedDichotomy.webp"]
+    "featured": "/exhibitions/lina-el-youssfi/entwined-dichotomy.webp",
+    "images": ["/exhibitions/lina-el-youssfi/entwined-dichotomy.webp"]
   },
   {
     "id": 3,
@@ -34,11 +34,11 @@
     "bio": [],
     "name": "Kenza Hamoumi",
     "medium": "Photography",
-    "profile": "/exhibitions/kenza-hamoumi/Kenza-HAMOUMI.jpg",
+    "profile": "/exhibitions/kenza-hamoumi/Kenza-HAMOUMI.webp",
     "featured": "featuredKenzaHamoumi",
     "images": [
-      "/exhibitions/kenza-hamoumi/Entre-terre-et-ciel-2.png",
-      "/exhibitions/kenza-hamoumi/Entre-terre-et-ciel.jpg"
+      "/exhibitions/kenza-hamoumi/Entre-terre-et-ciel-2.webp",
+      "/exhibitions/kenza-hamoumi/Entre-terre-et-ciel.webp"
     ]
   },
   {
@@ -47,17 +47,17 @@
     "name": "Mohamed Amine Serhane",
     "bio": [],
     "medium": "Mixed Media",
-    "profile": "/exhibitions/mohamed-amine-serhane/profile.jpg",
+    "profile": "/exhibitions/mohamed-amine-serhane/profile.webp",
     "featured": "/exhibitions/mohamed-amine-serhane/featured.webp",
     "images": [
-      "/exhibitions/mohamed-amine-serhane/Image139-2034x2048.jpg",
-      "/exhibitions/mohamed-amine-serhane/Image140-scaled.jpg",
-      "/exhibitions/mohamed-amine-serhane/Image153-scaled.jpg",
-      "/exhibitions/mohamed-amine-serhane/Image154-scaled.jpg",
-      "/exhibitions/mohamed-amine-serhane/Image155-scaled.jpg",
-      "/exhibitions/mohamed-amine-serhane/Image156-scaled.jpg",
-      "/exhibitions/mohamed-amine-serhane/Image157-scaled.jpg",
-      "/exhibitions/mohamed-amine-serhane/Image158-scaled.jpg"
+      "/exhibitions/mohamed-amine-serhane/Image139-2034x2048.webp",
+      "/exhibitions/mohamed-amine-serhane/Image140-scaled.webp",
+      "/exhibitions/mohamed-amine-serhane/Image153-scaled.webp",
+      "/exhibitions/mohamed-amine-serhane/Image154-scaled.webp",
+      "/exhibitions/mohamed-amine-serhane/Image155-scaled.webp",
+      "/exhibitions/mohamed-amine-serhane/Image156-scaled.webp",
+      "/exhibitions/mohamed-amine-serhane/Image157-scaled.webp",
+      "/exhibitions/mohamed-amine-serhane/Image158-scaled.webp"
     ]
   },
   {
@@ -80,12 +80,12 @@
     "name": "Soufiane Mezraoui",
     "bio": [],
     "medium": "Mixed Media",
-    "profile": "/exhibitions/soufiane-mezraoui/profile.jpeg",
+    "profile": "/exhibitions/soufiane-mezraoui/profile.webp",
     "featured": "featured2",
     "images": [
-      "/exhibitions/soufiane-mezraoui/Image119-scaled.jpg",
-      "/exhibitions/soufiane-mezraoui/Image123-scaled.jpg",
-      "/exhibitions/soufiane-mezraoui/Image124-scaled.jpg"
+      "/exhibitions/soufiane-mezraoui/Image119-scaled.webp",
+      "/exhibitions/soufiane-mezraoui/Image123-scaled.webp",
+      "/exhibitions/soufiane-mezraoui/Image124-scaled.webp"
     ]
   },
   {
