@@ -1,0 +1,85 @@
+[
+  {
+    "id": 1,
+    "name": "Anissa Hafidi",
+    "medium": "Painting",
+    "profile": "src/assets/exhibitions/anissa-hafidi/profile.jpg",
+    "featured": "src/assets/exhibitions/anissa-hafidi/featured.webp",
+    "images": [
+      "src/assets/exhibitions/anissa-hafidi/casablanca.jpg",
+      "src/assets/exhibitions/anissa-hafidi/the-end.webp"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Lina El Youssfi",
+    "medium": "Sculpture",
+    "profile": "profile1",
+    "featured": "featured2",
+    "images": ["src/assets/exhibitions/lina-el-youssfi/entwinedDichotomy.webp"]
+  },
+  {
+    "id": 3,
+    "name": "Kenza Hamoumi",
+    "medium": "Photography",
+    "profile": "profileKenzaHamoumi",
+    "featured": "featuredKenzaHamoumi",
+    "images": [
+      "src/assets/exhibitions/kenza-hamoumi/Entre-terre-et-ciel-2.png",
+      "src/assets/exhibitions/kenza-hamoumi/Entre-terre-et-ciel.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Mohamed Amine Serhane",
+    "medium": "Mixed Media",
+    "profile": "src/assets/exhibitions/mohamed-amine-serhane/profile.jpg",
+    "featured": "src/assets/exhibitions/mohamed-amine-serhane/featured.webp",
+    "images": [
+      "src/assets/exhibitions/mohamed-amine-serhane/Image139-2034x2048.jpg",
+      "src/assets/exhibitions/mohamed-amine-serhane/Image140-scaled.jpg",
+      "src/assets/exhibitions/mohamed-amine-serhane/Image153-scaled.jpg",
+      "src/assets/exhibitions/mohamed-amine-serhane/Image154-scaled.jpg",
+      "src/assets/exhibitions/mohamed-amine-serhane/Image155-scaled.jpg",
+      "src/assets/exhibitions/mohamed-amine-serhane/Image156-scaled.jpg",
+      "src/assets/exhibitions/mohamed-amine-serhane/Image157-scaled.jpg",
+      "src/assets/exhibitions/mohamed-amine-serhane/Image158-scaled.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Rachid Ismek",
+    "medium": "Mixed Media",
+    "profile": "src/assets/exhibitions/rachid-ismek/profile.webp",
+    "featured": "src/assets/exhibitions/rachid-ismek/featured.wep",
+    "images": [
+      "src/assets/exhibitions/rachid-ismek/rosa.webp",
+      "src/assets/exhibitions/rachid-ismek/sans-titre.webp",
+      "src/assets/exhibitions/rachid-ismek/the-game-of-life.webp"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Soufiane Mezraoui",
+    "medium": "Mixed Media",
+    "profile": "src/assets/exhibitions/soufiane-mezraoui/profile.jpeg",
+    "featured": "featured2",
+    "images": [
+      "src/assets/exhibitions/soufiane-mezraoui/Image119-scaled.jpg",
+      "src/assets/exhibitions/soufiane-mezraoui/Image123-scaled.jpg",
+      "src/assets/exhibitions/soufiane-mezraoui/Image124-scaled.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Mohamed Ahnach",
+    "medium": "Photography",
+    "profile": "src/assets/exhibitions/mohamed-ahnach/profile.webp",
+    "featured": "src/assets/exhibitions/mohamed-ahnach/featured.wep",
+    "images": [
+      "src/assets/exhibitions/mohamed-ahnach/the-uncanny-bloom.webp",
+      "src/assets/exhibitions/mohamed-ahnach/the-uncanny-intimacy.webp",
+      "src/assets/exhibitions/mohamed-ahnach/the-uncanny-le-beau-N1.webp"
+    ]
+  }
+]

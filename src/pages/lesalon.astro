@@ -71,7 +71,7 @@ allArtists = allArtists.map(artist => {
             <p class="text-md">{artist.data.medium}</p>
           </div>
     
-          {artist.data.images.map((img, i) => (
+          {artist.data.images.map((img: string, i: number) => (
             <img
               src={img}
               alt=""
