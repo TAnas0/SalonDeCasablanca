@@ -1,12 +1,63 @@
 ---
 import { FaArrowRight } from 'react-icons/fa';
+const images0 = [
+  {
+    src: "https://picsum.photos/id/1018/600/400",
+    alt: "sample 1",
+    format: "webp",
+    width: 600,
+    height: 400,
+    widths: [300, 600],
+  },
+  {
+    src: "https://picsum.photos/id/1015/600/400",
+    alt: "sample 2",
+    format: "webp",
+    width: 600,
+    height: 400,
+    widths: [300, 600],
+  },
+  {
+    src: "https://picsum.photos/id/1019/600/400",
+    alt: "sample 3",
+    format: "webp",
+    width: 600,
+    height: 400,
+    widths: [300, 600],
+  },
+];
+const images = [
+  { src: "https://picsum.photos/id/1018/1200/800", alt: "1", width: 1200, height: 800 },
+  { src: "https://picsum.photos/id/1015/1200/800", alt: "2", width: 1200, height: 800 },
+  { src: "https://picsum.photos/id/1019/1200/800", alt: "3", width: 1200, height: 800 },
+];
+
+
+
+
+
+// core version + navigation, pagination modules:
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+// init Swiper:
+// const swiper = new Swiper('.swiper', {
+//   // configure Swiper to use modules
+//   modules: [Navigation, Pagination],
+//   // ...
+// });
+
 ---
 
 <section class="bg-gray-50 py-10">
   <div class="container mx-auto px-4">
-    <h2 class="text-4xl font-bold mb-8 text-center">Le Salon de Casablanca</h2>
-    <div class="w-full h-full flex">
-      <div class="w-1/2">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Le Salon de Casablanca</h2>
+    <div class="w-full h-full flex flex-col md:flex-row gap-2">
+      <div class="md:w-1/2">
         Un rendez-vous culturel et artistique dédié à la création contemporaine sous toutes ses formes.
         <br>
         <br>
@@ -14,14 +65,42 @@ import { FaArrowRight } from 'react-icons/fa';
         <br>
         <br>
         Plus qu’une exposition, c’est un espace de rencontre et de partage, où ateliers, workshops et événements invitent le public à découvrir, expérimenter et dialoguer avec les œuvres. 
+        <!-- <a href="/lesalon" target="_blank" rel="noopener noreferrer" class="mt-10 inline-block bg-white text-red-700/90 font-bold py-3 px-8 rounded-full hover:bg-red-100 transition duration-300 border border-gray-100 shadow-lg">
+          <div class="flex gap-2 justify-center items-center">
+            <div>
+              Comité Curatorial et Selection
+            </div>
+            <FaArrowRight className="w-5 h-5" />
+          </div>
+        </a> -->
       </div>
-      <div class="w-1/2">carousel</div>
+      <div id="carouselTargetList" class="md:w-1/2">
+        <!-- <Carousel images={images} client:load /> -->
+        <!-- <Swiper spaceBetween={10} slidesPerView={1} loop={true} client:load>
+          <SwiperSlide><img src="https://picsum.photos/id/1018/600/400" alt="1" /></SwiperSlide>
+          <SwiperSlide><img src="https://picsum.photos/id/1015/600/400" alt="2" /></SwiperSlide>
+          <SwiperSlide><img src="https://picsum.photos/id/1019/600/400" alt="3" /></SwiperSlide>
+        </Swiper> -->
+        <div class="swiper-body">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="https://picsum.photos/seed/abcdef/600/400" alt="1" /></div>
+              <div class="swiper-slide"><img src="https://picsum.photos/seed/abcdef1/600/400" alt="1" /></div>
+              <div class="swiper-slide"><img src="https://picsum.photos/seed/abcdef2/600/400" alt="1" /></div>
+            </div>
+            <!-- <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-scrollbar"></div> -->
+          </div>
+        </div>
+      </div>
     </div>
     <div class="flex justify-end">
       <a href="/lesalon" target="_blank" rel="noopener noreferrer" class="inline-block bg-white text-red-700/90 font-bold py-3 px-8 rounded-full hover:bg-red-100 transition duration-300 border border-gray-100 shadow-lg">
         <div class="flex gap-2 justify-center items-center">
           <div>
-            Comité et Selection
+            Comité Curatorial et Selection
           </div>
           <FaArrowRight className="w-5 h-5" />
         </div>
@@ -50,3 +129,105 @@ import { FaArrowRight } from 'react-icons/fa';
 
   </div>
 </section>
+
+
+<script>
+import Swiper from 'swiper';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+
+document.addEventListener( 'DOMContentLoaded', function() {
+    const swiper = new Swiper('.swiper', {
+        modules: [Navigation, Pagination, Autoplay],
+        loop: true,               // true = slides loop infinitely
+        autoplay: {               // optional auto-slide
+          delay: 2000,            // 3 seconds per slide
+          disableOnInteraction: false,
+        },
+        speed: 500,               // slide transition speed in ms
+        slidesPerView: 1,         // how many slides visible at once
+        spaceBetween: 10,         // spacing between slides in px
+        centeredSlides: false,    // center the active slide
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+});
+</script>
+
+<style>
+	.swiper-container{
+		position: relative;
+		height: 600px;
+	}
+	.swiper.main {
+		width: 100%;
+		height: 80%;
+	}
+	.swiper.thumbs {
+		width: 100%;
+		height: 20%;
+		box-sizing: border-box;
+	    padding: 10px 0;
+	}
+	.swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+	  background-size: cover;
+      background-position: center;
+    }
+	.thumbs .swiper-slide{
+		width: 25%;
+    	height: 100%;
+    	opacity: 0.4;
+	}
+	
+	.thumbs .swiper-slide-thumb-active {
+      opacity: 1;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+	
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+</style>

@@ -1,0 +1,105 @@
+[
+  {
+    "id": 1,
+    "slug": "anissa-hafidi",
+    "name": "Anissa Hafidi",
+    "bio": [
+      "Après des études aux beaux-arts, son parcours l'amène à explorer divers médiums : peinture à l'huile, collage, installation. Cette diversité traduit une recherche constante d'équilibre entre tradition et expérimentation, et lui permet d'affirmer une identité visuelle immédiatement reconnaissable.",
+      "Ses œuvres s'articulent autour de thèmes liés à la mémoire, à l'espace intime et à l'identité culturelle. L'artiste privilégie une approche intuitive, où chaque geste conserve une spontanéité assumée, comme une trace vivante du processus créatif.",
+      "Ses premières expositions collectives lui ont permis de confronter son travail à un public varié, tout en enrichissant sa démarche grâce aux échanges avec d'autres créateurs et commissaires. Cette ouverture a contribué à élargir ses horizons et à affiner sa pratique.",
+      "Au fil des années, l'artiste a développé une esthétique où les références à la nature, aux paysages urbains et aux récits personnels se superposent. Chaque œuvre est pensée comme une invitation à la contemplation et à l'interprétation libre.",
+      "Aujourd'hui, elle poursuit son exploration avec de nouveaux supports et collaborations interdisciplinaires, convaincue que l'art reste un espace de dialogue essentiel, capable de relier les expériences individuelles et collectives."
+    ],
+    "medium": "Painting",
+    "profile": "/exhibitions/anissa-hafidi/profile.jpg",
+    "featured": "/exhibitions/anissa-hafidi/featured.webp",
+    "images": [
+      "/exhibitions/anissa-hafidi/casablanca.jpg",
+      "/exhibitions/anissa-hafidi/the-end.webp"
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "lina-el-youssfi",
+    "name": "Lina El Youssfi",
+    "bio": [],
+    "medium": "Sculpture",
+    "profile": "/exhibitions/lina-el-youssfi/profile.webp",
+    "featured": "featured2",
+    "images": ["/exhibitions/lina-el-youssfi/entwinedDichotomy.webp"]
+  },
+  {
+    "id": 3,
+    "slug": "kenza-hamoumi",
+    "bio": [],
+    "name": "Kenza Hamoumi",
+    "medium": "Photography",
+    "profile": "/exhibitions/kenza-hamoumi/Kenza-HAMOUMI.jpg",
+    "featured": "featuredKenzaHamoumi",
+    "images": [
+      "/exhibitions/kenza-hamoumi/Entre-terre-et-ciel-2.png",
+      "/exhibitions/kenza-hamoumi/Entre-terre-et-ciel.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "mohamed-amine-serhane",
+    "name": "Mohamed Amine Serhane",
+    "bio": [],
+    "medium": "Mixed Media",
+    "profile": "/exhibitions/mohamed-amine-serhane/profile.jpg",
+    "featured": "/exhibitions/mohamed-amine-serhane/featured.webp",
+    "images": [
+      "/exhibitions/mohamed-amine-serhane/Image139-2034x2048.jpg",
+      "/exhibitions/mohamed-amine-serhane/Image140-scaled.jpg",
+      "/exhibitions/mohamed-amine-serhane/Image153-scaled.jpg",
+      "/exhibitions/mohamed-amine-serhane/Image154-scaled.jpg",
+      "/exhibitions/mohamed-amine-serhane/Image155-scaled.jpg",
+      "/exhibitions/mohamed-amine-serhane/Image156-scaled.jpg",
+      "/exhibitions/mohamed-amine-serhane/Image157-scaled.jpg",
+      "/exhibitions/mohamed-amine-serhane/Image158-scaled.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "rachid-ismek",
+    "name": "Rachid Ismek",
+    "bio": [],
+    "medium": "Mixed Media",
+    "profile": "/exhibitions/rachid-ismek/profile.webp",
+    "featured": "/exhibitions/rachid-ismek/featured.wep",
+    "images": [
+      "/exhibitions/rachid-ismek/rosa.webp",
+      "/exhibitions/rachid-ismek/sans-titre.webp",
+      "/exhibitions/rachid-ismek/the-game-of-life.webp"
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "soufiane-mezraoui",
+    "name": "Soufiane Mezraoui",
+    "bio": [],
+    "medium": "Mixed Media",
+    "profile": "/exhibitions/soufiane-mezraoui/profile.jpeg",
+    "featured": "featured2",
+    "images": [
+      "/exhibitions/soufiane-mezraoui/Image119-scaled.jpg",
+      "/exhibitions/soufiane-mezraoui/Image123-scaled.jpg",
+      "/exhibitions/soufiane-mezraoui/Image124-scaled.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "mohamed-ahnach",
+    "bio": [],
+    "name": "Mohamed Ahnach",
+    "medium": "Photography",
+    "profile": "/exhibitions/mohamed-ahnach/profile.webp",
+    "featured": "/exhibitions/mohamed-ahnach/featured.wep",
+    "images": [
+      "/exhibitions/mohamed-ahnach/the-uncanny-bloom.webp",
+      "/exhibitions/mohamed-ahnach/the-uncanny-intimacy.webp",
+      "/exhibitions/mohamed-ahnach/the-uncanny-le-beau-N1.webp"
+    ]
+  }
+]

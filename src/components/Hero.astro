@@ -8,15 +8,15 @@ import { FaMapMarkerAlt, FaMapMarkedAlt, FaPalette, } from 'react-icons/fa';
 
 ---
 
-<section class="relative bg-white bg-[url('/sdc-pattern.svg')] bg-no-repeat bg-cover bg-center">
+<section class="relative bg-gray-100/90 bg-no-repeat bg-cover bg-center">
   <div class="absolute inset-0 bg-black/50 z-10 overflow-hidden"></div>
-  <div class="absolute inset-0 z-0 overflow-hidden">
-    <video autoplay muted loop playsinline class="w-full">
+  <div class="absolute inset-0 z-0 overflow-hidden w-full h-full">
+    <video autoplay muted loop playsinline class="w-full h-full object-cover">
       <source src="hero.webm" type="video/webm">
       <source src="hero.mp4" type="video/mp4">
     </video>
   </div>
-  <div class="container mx-auto z-10 relative">
+  <div class="container mx-auto z-10 relative px-4 md:p-0">
     <div class="flex flex-col lg:flex-row items-center">
       <div class="text-center py-10 h-full">
         <h1 class="text-5xl lg:text-6xl italic font-bold text-gray-50 underline">
@@ -50,10 +50,10 @@ import { FaMapMarkerAlt, FaMapMarkedAlt, FaPalette, } from 'react-icons/fa';
       </div> -->
     </div>
 
-    <div class="flex justify-center text-white gap-4 w-full mt-2">
+    <div class="flex flex-col md:flex-row justify-center text-white gap-4 w-full mt-2">
       <div class="">
         <a href="/gallery" class="flex gap-2 justify-center items-center bg-white text-red-700/90 font-bold py-3 px-8 rounded-full hover:bg-blue-100 transition duration-300">
-          Explorez nos artistes & expositions
+          Nos artistes & expositions
           <FaPalette className="w-5 h-5" />
         </a>
       </div>
@@ -66,17 +66,17 @@ import { FaMapMarkerAlt, FaMapMarkedAlt, FaPalette, } from 'react-icons/fa';
     </div>
 
     <div class="flex w-full gap-6 justify-center items-center mt-12 pb-6">
-      <div class="text-gray-50 text-lg font-semibold">
+      <div class="text-gray-50 text-xs md:text-lg font-bold md:font-semibold">
         Présenté par:
       </div>
       <div>
         <a href="https://laplateforme55.org" target="_blank" rel="noopener noreferrer">
-          <img src={laPlateforme55Logo.src} alt="" class="hover:scale-110 transform transition-transform duration-500 cursor-pointer">
+          <img src={laPlateforme55Logo.src} alt=""  width="70" height="70" class="hover:scale-110 transform transition-transform duration-500 cursor-pointer">
         </a>
       </div>
       <div>
         <a href="https://linktr.ee/basm.asso" target="_blank" rel="noopener noreferrer">
-          <img src={BASMALogo.src} alt="" class="rounded-full hover:scale-110 transform transition-transform duration-500 cursor-pointer">
+          <img src={BASMALogo.src} alt="" width="140" height="140"  class="rounded-full hover:scale-110 transform transition-transform duration-500 cursor-pointer">
         </a>
       </div>
     </div>

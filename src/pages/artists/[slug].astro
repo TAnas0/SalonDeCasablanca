@@ -1,0 +1,48 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, getEntry } from 'astro:content';
+const { slug } = Astro.params; // dynamic part of URL
+
+
+export async function getStaticPaths() {
+  const artists = await getCollection('artists');
+  return artists.map((artist) => ({
+    // params: { slug: artist.data.slug },
+    params: { slug: artist.data.slug },
+  }));
+}
+
+// const artist = await getEntry('artists', slug);
+const artists = await getCollection('artists');
+const artist = artists.find(a => a.data.slug === slug)
+---
+
+<Layout title={`Le Salon de Casablanca - ` + slug}>
+
+  <div class="flex flex-col md:flex-row max-w-7xl mx-auto w-full mt-4 mb-6">
+    <div class="flex-[3] bg-gray-50 p-4 rounded-2xl shadow-xl">
+      <h2 class="text-2xl font-semibold underline mb-4">{artist.data.name}</h2>
+      <img src={artist.data.profile} alt="placeholder" class="float-right object-cover mb-2 w-[200px] h-[200px]" />
+      {artist.data.bio.map((para) => (
+        <p class="mb-4">{para}</p>
+      ))}
+    </div>
+    <div class="flex-[1] bg-red-200/90 p-4 shadow-xl">
+      <h4 class="border-b border-gray-800 mb-6 text-lg">La Sélection</h4>
+      <ul class="">
+        {artists.map((a) => (
+          <li
+            class={`flex items-center cursor-pointer mb-2 hover:text-blue-500 ${
+              a.data.slug === artist.data.slug ? 'text-blue-700 font-semibold underline' : 'text-gray-800'
+            }`}
+          >
+              <span class="w-2 h-2 bg-red-600 rounded-full mr-2"></span>
+              <a href={`/artists/${a.data.slug}`}>
+              <span class="">{a.data.name}</span>
+          </a>
+            </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</Layout>
