@@ -87,7 +87,7 @@ import Layout from "../layouts/Layout.astro";
 
     tabs.forEach((tab) => {
       tab.addEventListener("click", () => {
-        const targetId = tab.dataset.target;
+        const targetId = (tab as HTMLElement).dataset.target;
 
         // Deactivate all tabs
         tabs.forEach((t) => {

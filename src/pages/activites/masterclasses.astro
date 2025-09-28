@@ -21,7 +21,7 @@ const items = Array.from({ length: 10 }, (_, i) => ({
       </div>
       <div class="space-y-4">
         {items.map((item) => (
-          <div class="accordion border rounded-xl shadow-md overflow-hidden" key={item.id}>
+          <div class="accordion border rounded-xl shadow-md overflow-hidden" id={String(item.id)}>
             <button
               class="accordion-header flex justify-between items-center w-full text-left px-6 py-4 font-semibold bg-gray-50 hover:bg-gray-100 transition-colors focus:outline-none"
               aria-expanded="false"
@@ -48,7 +48,7 @@ const items = Array.from({ length: 10 }, (_, i) => ({
             >
               <div class="divide-y divide-gray-200">
                 {item.sessions.map((s, idx) => (
-                  <p class="px-6 py-3" key={idx}>{s}</p>
+                  <p class="px-6 py-3" id={String(idx)}>{s}</p>
                 ))}
               </div>
             </div>
@@ -67,9 +67,9 @@ const items = Array.from({ length: 10 }, (_, i) => ({
 
     headers.forEach((header) => {
       const panelId = header.getAttribute("aria-controls");
+      if (!panelId) return;
       const panel = document.getElementById(panelId);
-
-
+      if (!panel) return;
 
       // Ensure closed initial state
       header.setAttribute("aria-expanded", "false");
@@ -77,7 +77,7 @@ const items = Array.from({ length: 10 }, (_, i) => ({
       panel.style.opacity = "0";
       panel.setAttribute("aria-hidden", "true");
 
-      header.addEventListener("click", () => {
+      (header as HTMLElement).addEventListener("click", () => {
         const isOpen = header.getAttribute("aria-expanded") === "true";
 
         if (isOpen) {
@@ -101,7 +101,9 @@ const items = Array.from({ length: 10 }, (_, i) => ({
               const openPanel = document.getElementById(
                 openHeader.getAttribute("aria-controls")
               );
+              if (!openPanel) return;
               openPanel.style.maxHeight = openPanel.scrollHeight + "px";
+
               openPanel.offsetHeight;
               openPanel.style.maxHeight = "0px";
               openPanel.style.opacity = "0";
@@ -117,10 +119,10 @@ const items = Array.from({ length: 10 }, (_, i) => ({
       });
 
       // keyboard support (Enter / Space)
-      header.addEventListener("keydown", (e) => {
+      (header as HTMLElement).addEventListener("keydown", (e: KeyboardEvent) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
-          header.click();
+          (header as HTMLElement).click();;
         }
       });
     });
