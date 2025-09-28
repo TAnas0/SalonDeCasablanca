@@ -1,0 +1,150 @@
+---
+import Layout from "../../layouts/Layout.astro";
+const items = Array.from({ length: 10 }, (_, i) => ({
+  id: i + 1,
+  title: `Jour ${i + 1} — Exemple`,
+  sessions: [
+    "09:00 — Ouverture",
+    "10:30 — Keynote",
+    "14:00 — Atelier A"
+  ]
+}));
+---
+
+<Layout title="Le Salon de Casablanca - Édition 2025">
+  <section class="py-8 bg-white" id="conferences">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-between mb-2 border-b-2 border-black">
+        <h2 class="text-left text-3xl font-bold text-gray-900">
+          Masterclasses
+        </h2>
+      </div>
+      <div class="space-y-4">
+        {items.map((item) => (
+          <div class="accordion border rounded-xl shadow-md overflow-hidden" key={item.id}>
+            <button
+              class="accordion-header flex justify-between items-center w-full text-left px-6 py-4 font-semibold bg-gray-50 hover:bg-gray-100 transition-colors focus:outline-none"
+              aria-expanded="false"
+              aria-controls={`panel-${item.id}`}
+              id={`header-${item.id}`}
+            >
+              <span>{item.title}</span>
+              <svg
+                class="w-5 h-5 transform"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+      
+            <div
+              id={`panel-${item.id}`}
+              class="accordion-body bg-white"
+              style="max-height: 0px; overflow: hidden; transition: max-height 350ms ease, opacity 200ms linear; opacity: 0;"
+              aria-hidden="true"
+            >
+              <div class="divide-y divide-gray-200">
+                {item.sessions.map((s, idx) => (
+                  <p class="px-6 py-3" key={idx}>{s}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const headers = document.querySelectorAll(".accordion-header");
+
+    headers.forEach((header) => {
+      const panelId = header.getAttribute("aria-controls");
+      const panel = document.getElementById(panelId);
+
+
+
+      // Ensure closed initial state
+      header.setAttribute("aria-expanded", "false");
+      panel.style.maxHeight = "0px";
+      panel.style.opacity = "0";
+      panel.setAttribute("aria-hidden", "true");
+
+      header.addEventListener("click", () => {
+        const isOpen = header.getAttribute("aria-expanded") === "true";
+
+        if (isOpen) {
+        } else {
+        }
+
+      if (isOpen) {
+          // Close current panel: animate from current height -> 0
+          panel.style.maxHeight = panel.scrollHeight + "px"; // set to real px first
+          panel.offsetHeight; // force reflow to allow transition
+          panel.style.maxHeight = "0px";
+          panel.style.opacity = "0";
+          panel.setAttribute("aria-hidden", "true");
+          header.setAttribute("aria-expanded", "false");
+        } else {
+          // Optional: close others to allow only one open at a time.
+          document
+            .querySelectorAll('.accordion-header[aria-expanded="true"]')
+            .forEach((openHeader) => {
+              openHeader.setAttribute("aria-expanded", "false");
+              const openPanel = document.getElementById(
+                openHeader.getAttribute("aria-controls")
+              );
+              openPanel.style.maxHeight = openPanel.scrollHeight + "px";
+              openPanel.offsetHeight;
+              openPanel.style.maxHeight = "0px";
+              openPanel.style.opacity = "0";
+              openPanel.setAttribute("aria-hidden", "true");
+            });
+
+          // Open this panel
+          panel.style.maxHeight = panel.scrollHeight + "px";
+          panel.style.opacity = "1";
+          panel.setAttribute("aria-hidden", "false");
+          header.setAttribute("aria-expanded", "true");
+        }
+      });
+
+      // keyboard support (Enter / Space)
+      header.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          header.click();
+        }
+      });
+    });
+
+    // Keep open panels sized correctly on window resize
+    window.addEventListener("resize", () => {
+      document
+        .querySelectorAll('.accordion-header[aria-expanded="true"]')
+        .forEach((h) => {
+          const p = document.getElementById(h.getAttribute("aria-controls"));
+          p.style.maxHeight = p.scrollHeight + "px";
+        });
+    });
+  });
+</script>
+
+
+<style>
+  /* animate the chevron when the button's aria-expanded changes */
+  .accordion-header svg {
+    transition: transform .28s ease;
+    transform-origin: center;
+  }
+  .accordion-header[aria-expanded="true"] svg {
+    transform: rotate(-180deg);
+  }
+</style>

@@ -1,26 +1,35 @@
 ---
 import { Image } from 'astro:assets';
-import impactImage from '../assets/grandmother-playing.png';
 import conferences from '../../assets/features/sdc-conferences-5-modified.webp';
 ---
 
 <section class="bg-white py-0">
   <div class="container mx-auto px-0">
-    <div class="flex flex-col md:flex-row items-center gap-2">
-      <div class="md:w-1/2">
+    <div class="relative flex flex-col md:flex-row items-center gap-2 min-h-96 md:min-h-0">
+      
+      {/* Mobile background image */}
+      <div 
+        class="absolute inset-0 md:hidden bg-cover bg-bottom" 
+        style={{ backgroundImage: `url(${conferences.src})` }}
+      ></div>
+
+      {/* Desktop image (side-by-side) */}
+      <div class="hidden md:block md:w-1/2">
         <Image 
           src={conferences} 
-          alt="Grandmother and granddaughter laughing together while playing on the grass" 
-          class="rounded-lg shadow-xl w-full"
+          alt="Conferences" 
+          class="rounded-lg shadow-xl w-full h-full object-cover"
           width={600}
           height={400}
         />
       </div>
-      <div class="md:w-1/2">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+
+      {/* Text content */}
+      <div class="relative z-10 md:w-1/2 bg-gray-900/50 md:bg-transparent p-6 md:p-0 mt-8">
+        <h2 class="text-4xl hidden md:relative md:text-5xl font-bold text-gray-900 mb-6">
           Conférences
         </h2>
-        <p class="text-xl text-gray-700">
+        <p class="text-xl text-gray-50 md:text-gray-700">
           Your Company gives hard-to-reach and complex populations a motivating and rewarding experience daily to improve health, cost, and quality outcomes. Our programs break through the noise, engaging members that traditional strategies have failed to reach.
         </p>
       </div>

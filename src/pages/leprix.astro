@@ -1,0 +1,108 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Le Prix ALMADA-EMERGENCE - Le Salon de Casablanca">
+  <section class="mt-2">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col justify-center mb-2">
+        <h2 class="text-center text-3xl font-bold text-gray-900 mb-2">
+          Qu'est-ce que le Prix ALMADA-EMERGENCE?
+        </h2>
+        <p class="mb-6">Definition, details, etc.</p>
+
+          <div class="w-full flex flex-col mx-auto">
+            <!-- Tab Buttons -->
+            <div class="flex justify-between max-w-2xl mx-auto gap-16">
+              <button
+                class="tab-btn px-4 py-2 bg-red-200 text-white"
+                data-target="mot"
+              >
+                Mot
+              </button>
+              <button
+                class="tab-btn px-4 py-2 bg-gray-100 text-gray-900"
+                data-target="apropos"
+              >
+                A Propos
+              </button>
+              <button
+                class="tab-btn px-4 py-2 bg-gray-100 text-gray-900"
+                data-target="conditions"
+              >
+                Conditions
+              </button>
+            </div>
+
+            <!-- Tab Panels -->
+            <div class="mt-4 w-full max-w-3xl mx-auto">
+              <div id="mot" class="tab-panel relative">
+                <!-- Floating image -->
+                <img 
+                  src="https://placehold.co/200" 
+                  alt="Président" 
+                  class="float-right w-[200px] h-[200px] ml-4 mb-4 object-cover"
+                />
+              
+                <p class="mb-2">
+                  Chers membres et invités du Salon de Casablanca,
+                </p>
+              
+                <p class="mb-2">
+                  C’est avec un immense plaisir que je vous adresse ce mot d’accueil. Notre engagement envers la promotion de l’art et de la culture contemporaine reste au cœur de notre mission. Chaque initiative que nous entreprenons vise à rapprocher les artistes et le public dans un esprit d’échange et de créativité.
+                </p>
+              
+                <p class="mb-2">
+                  Ce salon représente l’aboutissement d’efforts collectifs et la célébration de talents divers. Nous espérons que les rencontres, les ateliers et les conférences enrichiront votre expérience et inspireront de nouvelles collaborations.
+                </p>
+                <p class="mb-2">
+                  Ce salon représente l’aboutissement d’efforts collectifs et la célébration de talents divers. Nous espérons que les rencontres, les ateliers et les conférences enrichiront votre expérience et inspireront de nouvelles collaborations.
+                </p>
+                <p class="mb-2">
+                  Ce salon représente l’aboutissement d’efforts collectifs et la célébration de talents divers. Nous espérons que les rencontres, les ateliers et les conférences enrichiront votre expérience et inspireront de nouvelles collaborations.
+                </p>
+                <p>
+                  Avec toute ma considération,<br/>
+                  <strong>Le Président</strong>
+                </p>
+              </div>
+              
+              <div id="apropos" class="tab-panel hidden">
+                <p>Contenu A Propos</p>
+              </div>
+              <div id="conditions" class="tab-panel hidden">
+                <p>Contenu Conditions</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll(".tab-btn");
+    const panels = document.querySelectorAll(".tab-panel");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const targetId = tab.dataset.target;
+
+        // Deactivate all tabs
+        tabs.forEach((t) => {
+          t.classList.remove("bg-red-200", "text-white");
+          t.classList.add("bg-gray-100", "text-gray-900");
+        });
+
+        // Hide all panels
+        panels.forEach((p) => p.classList.add("hidden"));
+
+        // Activate clicked tab
+        tab.classList.add("bg-red-200", "text-white");
+        tab.classList.remove("bg-gray-100", "text-gray-900");
+        document.getElementById(targetId).classList.remove("hidden");
+      });
+    });
+  });
+</script>
